@@ -13,7 +13,7 @@ namespace Leanwork.ValidCredCard
 
             number = number.RemoveCharacters(" ", ",", ".", "-", "_");
 
-            IValidateCredidCard valid = null;
+            IValidateCredCard valid = null;
 
             if (number.StartsWith("4"))
             {

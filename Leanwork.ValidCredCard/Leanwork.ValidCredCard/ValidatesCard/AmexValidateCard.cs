@@ -2,7 +2,7 @@
 
 namespace Leanwork.ValidCredCard
 {
-    internal class AmexValidateCard : IValidateCredidCard
+    internal class AmexValidateCard : IValidateCredCard
     {
         public bool IsValid(string number)
         {
