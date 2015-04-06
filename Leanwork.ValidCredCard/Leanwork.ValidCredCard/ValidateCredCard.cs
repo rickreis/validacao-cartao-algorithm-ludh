@@ -22,7 +22,7 @@ namespace Leanwork.ValidCredCard
                 || number.StartsWith("54") 
                 || number.StartsWith("55"))
             {
-                return CkeckNumber(number);                              
+                return CheckSum(number);                              
             }
 
             return false;            
@@ -33,7 +33,7 @@ namespace Leanwork.ValidCredCard
         /// </summary>
         /// <param name="number">number credcard</param>
         /// <returns>return is valid</returns>
-        bool CkeckNumber(string number)
+        bool CheckSum(string number)
         {
             //validação para número do cartão inválido
             if (String.IsNullOrWhiteSpace(number))
