@@ -22,13 +22,18 @@ namespace Leanwork.ValidCredCard
                 || number.StartsWith("54") 
                 || number.StartsWith("55"))
             {
-                return CheckAlgorithmLuhn(number);                              
+                return CkeckNumber(number);                              
             }
 
             return false;            
         }
 
-        bool CheckAlgorithmLuhn(string number)
+        /// <summary>
+        /// Check number algorithm luhn
+        /// </summary>
+        /// <param name="number">number credcard</param>
+        /// <returns>return is valid</returns>
+        bool CkeckNumber(string number)
         {
             //validação para número do cartão inválido
             if (String.IsNullOrWhiteSpace(number))
