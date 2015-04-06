@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 
 namespace Leanwork.ValidCredCard
 {
@@ -11,33 +12,35 @@ namespace Leanwork.ValidCredCard
                 return false;
             }            
 
-            number = number.RemoveCharacters(" ", ",", ".", "-", "_");
-
-            IValidateCredCard valid = null;
-
-            if (number.StartsWith("4"))
+            if (number.StartsWith("4")
+                || number.StartsWith("34") 
+                || number.StartsWith("37")
+                || number.StartsWith("6011")
+                || number.StartsWith("51") 
+                || number.StartsWith("52") 
+                || number.StartsWith("53")
+                || number.StartsWith("54") 
+                || number.StartsWith("55"))
             {
-                valid = new VisaValidateCard();                
+                return CheckAlgorithmLuhn(number);                              
             }
-            else if (number.StartsWith("34") || number.StartsWith("37"))
-            {
-                valid = new AmexValidateCard();                
-            }
-            else if (number.StartsWith("6011"))
-            {
-                valid = new DiscoverValidateCard();                
-            }
-            else if (number.StartsWith("5"))
-            {
-                valid = new MasterValidateCard();
-            }            
 
-            if(valid == null)
-            {
+            return false;            
+        }
+
+        bool CheckAlgorithmLuhn(string number)
+        {
+            //validação para número do cartão inválido
+            if (String.IsNullOrWhiteSpace(number))
                 return false;
-            }
 
-            return valid.IsValid(number);
+            int checkSum = number.Where((e) => e >= '0' && e <= '9')
+                    .Reverse()
+                    .Select((e, i) => ((int)e - 48) * (i % 2 == 0 ? 1 : 2))
+                    .Sum((e) => e / 10 + e % 10);
+
+            //verificamos se a váriavel "checksum" tem o valor de módulo 10 válido
+            return checkSum % 10 == 0;
         }
     }
 }

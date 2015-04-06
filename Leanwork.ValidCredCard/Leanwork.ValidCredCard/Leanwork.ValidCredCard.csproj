@@ -39,15 +39,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Extensions\StringExtensions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ValidateCredCard.cs" />
-    <Compile Include="ValidatesCard\DiscoverValidateCard.cs" />
-    <Compile Include="ValidatesCard\AmexValidateCard.cs" />
-    <Compile Include="ValidatesCard\IValidateCredCard.cs" />
-    <Compile Include="ValidatesCard\MasterValidateCard.cs" />
-    <Compile Include="ValidatesCard\ValidNumberAlgorithmLuhn.cs" />
-    <Compile Include="ValidatesCard\VisaValidateCard.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
