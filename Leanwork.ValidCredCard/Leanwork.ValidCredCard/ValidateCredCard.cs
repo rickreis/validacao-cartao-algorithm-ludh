@@ -10,22 +10,22 @@ namespace Leanwork.ValidCredCard
             if (String.IsNullOrWhiteSpace(number))
             {
                 return false;
-            }            
-
-            if (number.StartsWith("4")
-                || number.StartsWith("34") 
-                || number.StartsWith("37")
-                || number.StartsWith("6011")
-                || number.StartsWith("51") 
-                || number.StartsWith("52") 
-                || number.StartsWith("53")
-                || number.StartsWith("54") 
-                || number.StartsWith("55"))
-            {
-                return CheckSum(number);                              
             }
 
-            return false;            
+            if (number.StartsWith("4")
+                || number.StartsWith("34")
+                || number.StartsWith("37")
+                || number.StartsWith("6011")
+                || number.StartsWith("51")
+                || number.StartsWith("52")
+                || number.StartsWith("53")
+                || number.StartsWith("54")
+                || number.StartsWith("55"))
+            {
+                return CheckSum(number);
+            }
+
+            return false;
         }
 
         /// <summary>

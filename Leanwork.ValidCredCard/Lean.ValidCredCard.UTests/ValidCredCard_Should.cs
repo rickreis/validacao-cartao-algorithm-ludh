@@ -19,36 +19,6 @@ namespace Lean.ValidCredCard.UTests
 
             //assert
             Assert.IsFalse(valid);
-        }        
-
-        [TestMethod]
-        public void Return_invalid_when_number_less_equal_length_13()
-        {
-             //arrange
-            string number = "123123456789";
-
-            var service = new ValidateCredCard();
-
-            //act
-            bool valid = service.IsValid(number);
-
-            //assert
-            Assert.IsFalse(valid);
-        }
-
-        [TestMethod]
-        public void Return_invalid_when_lenght_invalid_visa()
-        {
-            //arrange
-            string number = "4408 0412 3456 78931";
-
-            var service = new ValidateCredCard();
-
-            //act
-            bool valid = service.IsValid(number);
-
-            //assert
-            Assert.IsFalse(valid);
         }
 
         [TestMethod]
