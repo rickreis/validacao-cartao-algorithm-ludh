@@ -44,7 +44,7 @@
     <Compile Include="ValidateCredCard.cs" />
     <Compile Include="ValidatesCard\DiscoverValidateCard.cs" />
     <Compile Include="ValidatesCard\AmexValidateCard.cs" />
-    <Compile Include="ValidatesCard\IValidateCredidCard.cs" />
+    <Compile Include="ValidatesCard\IValidateCredCard.cs" />
     <Compile Include="ValidatesCard\MasterValidateCard.cs" />
     <Compile Include="ValidatesCard\ValidNumberAlgorithmLuhn.cs" />
     <Compile Include="ValidatesCard\VisaValidateCard.cs" />
